@@ -1,34 +1,96 @@
-html {
-    height: 100%;
+:root {
+    color-scheme: dark;
+    --background: #0a0a0a;
+    --foreground: #ebebeb;
+    --muted: #969696;
 }
+
+* {
+    box-sizing: border-box;
+}
+
+html,
 body {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.05), transparent 36%),
+        radial-gradient(circle at bottom, rgba(255, 255, 255, 0.03), transparent 40%),
+        var(--background);
+    color: var(--foreground);
+}
+
+a {
+    color: inherit;
+}
+
+.lines {
+    position: fixed;
+    inset: 0;
+    width: 100%;
     height: 100%;
+    display: block;
+    pointer-events: none;
+}
+
+.hero {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+}
+
+.hero__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+}
+
+.hero__title {
     margin: 0;
-}
-.img-bg {
-    margin: 0;
-    width:100%;
-    height:100%;
-    background: url(images/background.jpg) no-repeat center;
-    background-size:cover;
-}
-
-.img-bg2 {
-    width:100%;
-    height:100%;
-    background: url(images/lines-contacts4.png) no-repeat center;
-    background-size:cover;
+    font-family: "Space Grotesk", "Segoe UI", sans-serif;
+    font-size: clamp(2rem, 4vw, 4rem);
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    user-select: none;
 }
 
-.logo {
-    position: absolute;
-    top: 20%;
-    left: 10%;
+.hero__email {
+    font-family: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+    font-size: clamp(0.75rem, 1.4vw, 0.95rem);
+    letter-spacing: 0.28em;
+    text-decoration: none;
+    color: var(--muted);
+    transition: color 200ms ease;
 }
 
-.contact {
-    position: absolute;
-    top: 73%;
-    left: 10%;
-    font-size: 20px;
+.hero__email:hover,
+.hero__email:focus-visible {
+    color: var(--foreground);
+}
+
+@media (max-width: 640px) {
+    .hero__title {
+        letter-spacing: 0.14em;
+    }
+
+    .hero__email {
+        letter-spacing: 0.18em;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero__email {
+        transition: none;
+    }
 }
