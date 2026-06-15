@@ -79,31 +79,27 @@ a {
     color: var(--foreground);
 }
 
-.footer {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 1.75rem;
-    z-index: 1;
+.hero__social {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
+    margin-top: 0.35rem;
 }
 
-.footer__link {
+.hero__social-link {
     display: inline-flex;
     color: var(--muted);
     transition: color 200ms ease;
 }
 
-.footer__link:hover,
-.footer__link:focus-visible {
+.hero__social-link:hover,
+.hero__social-link:focus-visible {
     color: var(--foreground);
 }
 
-.footer__link svg {
-    width: 22px;
-    height: 22px;
+.hero__social-link svg {
+    width: 20px;
+    height: 20px;
     display: block;
 }
 
@@ -119,7 +115,7 @@ a {
 
 @media (prefers-reduced-motion: reduce) {
     .hero__email,
-    .footer__link {
+    .hero__social-link {
         transition: none;
     }
 }
