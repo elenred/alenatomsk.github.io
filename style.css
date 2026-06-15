@@ -79,6 +79,34 @@ a {
     color: var(--foreground);
 }
 
+.footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 1.75rem;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.footer__link {
+    display: inline-flex;
+    color: var(--muted);
+    transition: color 200ms ease;
+}
+
+.footer__link:hover,
+.footer__link:focus-visible {
+    color: var(--foreground);
+}
+
+.footer__link svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+
 @media (max-width: 640px) {
     .hero__title {
         letter-spacing: 0.14em;
@@ -90,7 +118,8 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .hero__email {
+    .hero__email,
+    .footer__link {
         transition: none;
     }
 }
